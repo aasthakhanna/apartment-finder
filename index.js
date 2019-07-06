@@ -42,9 +42,7 @@ app.get('/prices', function(req, res) {
 
       var sorted = _.sortBy(apartments, 'price');
 
-      if (sorted instanceof Array) {
-
-      } else {
+      if (!(sorted instanceof Array)) {
         sorted = [sorted];
       }
 
@@ -102,9 +100,7 @@ app.get('/random', function(req, res) {
 
       var found = _.shuffle(apartments)[0];
 
-      if (found instanceof Array) {
-
-      } else {
+      if (!(found instanceof Array)) {
         found = [found];
       }
 

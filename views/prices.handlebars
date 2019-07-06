@@ -1,0 +1,18 @@
+<h1>Welcome to Apartment Finder!</h1>
+<h2>{{header}}</h2>
+
+{{#if prices}}
+    <table class="listings_table" id="price_table" style="width:100%">
+      <tr>
+        <th>Price Under</th>
+      </tr>
+      {{#each prices}}
+        <tr>
+          <td><a href="/price/{{this}}">${{this}}</a></td>
+        </tr>
+      {{/each}}
+      {{else}}
+      <br>
+      <h2>There are no listings yet.</h2>
+      <h3><a href="/addListing">Add your listing!</a></h3>
+{{/if}}

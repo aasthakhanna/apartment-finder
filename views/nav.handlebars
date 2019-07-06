@@ -1,0 +1,86 @@
+<h1>Welcome to Apartment Finder!</h1>
+<h2>{{header}}</h2>
+
+{{#if date}}
+   {{#if apt}}
+    <table class="listings_table" style="width:100%">
+      <tr>
+        <th>Listing</th>
+        <th>Move In Date</th>
+      </tr>
+      {{#each apt}}
+        <tr>
+          <td><a href="{{this._id}}">{{this.title}}</a></td>
+          <td>{{moment this.start_date format="MM/DD/YYYY"}}</td>
+        </h3>
+        </tr>
+      {{/each}}
+    {{else}}
+      <br>
+      <h2>There are no listings yet.</h2>
+      <h3><a href="/addListing">Add your listing!</a></h3>
+    {{/if}}
+{{else if price}}
+  {{#if apt}}
+    <table class="listings_table" style="width:100%">
+      <tr>
+        <th>Price</th>
+        <th>Listing</th>
+      </tr>
+      {{#each apt}}
+        <tr>
+          <td>${{this.price}}</td>
+          <td><a href="/{{this._id}}">{{this.title}}</a></td>
+        </h3>
+        </tr>
+      {{/each}}
+    {{else}}
+      <br>
+      <h2>There are no listings yet.</h2>
+      <h3><a href="/addListing">Add your listing!</a></h3>
+    {{/if}}
+{{else if features}}
+  {{#if apt}}
+    <table class="listings_table" style="width:100%">
+      <tr>
+        <th>Features</th>
+        <th>Listing</th>
+      </tr>
+      {{#each apt}}
+      {{#if this.features.length}}
+        <tr>
+          <td>{{this.features}}</td>
+          <td><a href="/{{this._id}}">{{this.title}}</a></td>
+        </h3>
+        </tr>
+      {{else}}
+          <td>N/A</td>
+          <td><a href="/{{this._id}}">{{this.title}}</a></td>
+      {{/if}}
+      {{/each}}
+    {{else}}
+      <br>
+      <h2>There are no listings yet.</h2>
+      <h3><a href="/addListing">Add your listing!</a></h3>
+    {{/if}}
+{{else}}
+    {{#if apt}}
+      <table class="listings_table" style="width:100%">
+        <tr>
+          <th>Listing</th>
+          <th>Date Available</th>
+        </tr>
+        {{#each apt}}
+          <tr>
+            <td><a href="/{{this._id}}">{{this.title}}</a></td>
+            <td>{{moment this.start_date format="MM/DD/YYYY"}}</td>
+          </h3>
+          </tr>
+        {{/each}}
+  {{else}}
+      <br>
+      <h2>There are no listings yet.</h2>
+      <h3><a href="/addListing">Add your listing!</a></h3>
+  {{/if}}
+{{/if}}
+</body>

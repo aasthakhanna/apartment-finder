@@ -1,0 +1,12 @@
+<h1>Welcome to Apartment Finder!</h1>
+{{#if err}}
+	<h2>Could not insert listing:</h2>
+	<h2>{{this.display}}</h2>
+	<h3><a href="/">Back to Home</a></h3>
+	<h3><a href="/addListing">Add Another Listing</a></h3>
+	</ul>
+{{else}}
+	<h2>Successfully inserted listing!</h2>
+	<h3><a href="/">Back to Home</a></h3>
+	<h3><a href="/addListing">Add Another Listing</a></h3>
+{{/if}}

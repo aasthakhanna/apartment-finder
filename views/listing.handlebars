@@ -1,0 +1,32 @@
+<h1>Welcome to Apartment Finder!</h1>
+
+<h2>Current Apartment Listings:</h2>
+{{#if apt}}
+    <table class="listings_table" style="width:100%">
+      <tr>
+        <th>Title</th>
+        <th>Contact Name</th>
+        <th>Email</th>
+        <th>Location</th>
+        <th>Lease Starts</th>
+        <th>Lease Ends</th>
+        <th>Price/Month</th>
+        <th>Features</th>
+      </tr>
+      {{#each apt}}
+        <tr>
+          <td>{{this.title}}</td>
+          <td>{{this.first_name}} {{this.last_name}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.location}}</td>
+          <td>{{moment this.start_date format="MM/DD/YYYY"}}</td>
+          <td>{{moment this.end_date format="MM/DD/YYYY"}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.features}}</td>
+        </tr>
+      {{/each}}
+{{else}}
+      <br>
+      <h2>There are no listings yet.</h2>
+      <h3><a href="/addListing">Add your listing!</a></h3>
+{{/if}}

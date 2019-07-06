@@ -1,0 +1,41 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+<script src="index.js" type="text/javascript"></script>
+
+<h1>Welcome to Apartment Finder!</h1>
+<br>
+<p>Apartment Finder is a tool for finding affordable housing in the College Park, MD metro area. Those looking to move out of their current places can <a href="/addListing">add listings</a> to reach potential releasors, whereas those seeking housing can use our site to filter through listings and find their perfect match. Happy finding!</p>
+<br>
+<h3>Current Apartment Listings:</h3>
+    {{#if apt}}
+    <div id="body">
+    <table class="listings_table" style="width:100%">
+      <tr>
+        <th>Title</th>
+        <th>Contact Name</th>
+        <th>Email</th>
+        <th>Location</th>
+        <th>Lease Starts</th>
+        <th>Lease Ends</th>
+        <th>Price/Month</th>
+        <th>Features</th>
+      </tr>
+      {{#each apt}}
+        <tr>
+          <td><a href="/{{this._id}}">{{this.title}}</a></td>
+          <td>{{this.first_name}} {{this.last_name}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.location}}</td>
+          <td>{{moment this.start_date format="MM/DD/YYYY"}}</td>
+          <td>{{moment this.end_date format="MM/DD/YYYY"}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.features}}</td>
+        </tr>
+      {{/each}}
+    </table>
+    </div>
+{{else}}
+      <br>
+      <h2>There are no listings yet.</h2>
+      <h3><a href="/addListing">Add your listing!</a></h3>
+{{/if}}
+</body>

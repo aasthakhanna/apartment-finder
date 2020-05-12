@@ -1,9 +1,9 @@
-# apartment-finder
-website created in early 2018 to facilitate summer apartment releasing. node + mongodb backend, html/handlebars/bootstrap frontend.
+# Apartment Finder
+Website created in early 2018 to facilitate university housing releasing over the summer. Node.js + Express back-end, HTML/Handlebars/Bootstrap front-end, MongoDB for data persistence.
 
 ### startup
-fill in .env with the credentials for the database.
+Fill in .env with the credentials for the database.
 
-run "npm install && npm start" in the terminal.
+Run "npm install && npm start" in the terminal.
 
-navigate to localhost:3000 in your browser.
+Navigate to localhost:3000 in your browser.
